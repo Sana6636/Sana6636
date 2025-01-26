@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Beige */
+            color: #4b3832; /* Dark brown */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            background-color: #fffaf0; /* Light beige */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .user {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .trophy {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .nav-buttons a {
+            display: block;
+            padding: 15px;
+            background-color: #d2b48c; /* Tan */
+            color: #4b3832; /* Dark brown */
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-buttons a:hover {
+            background-color: #b8860b; /* Darker tan */
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">Leaderboard</h1>
+
+    <section>
+        <h2>Top Performers</h2>
+        <div class="user">
+            <p>User1 - 1500 points</p>
+            <p class="trophy">🏆 1st Place - Gold Trophy</p>
+        </div>
+        <div class="user">
+            <p>User2 - 1400 points</p>
+            <p class="trophy">🥈 2nd Place - Silver Trophy</p>
+        </div>
+        <div class="user">
+            <p>User3 - 1300 points</p>
+            <p class="trophy">🥉 3rd Place - Bronze Trophy</p>
+        </div>
+        <div class="user">
+            <p>User4 - 1200 points</p>
+            <p class="trophy">🏅 4th Place - Participant Ribbon</p>
+        </div>
+        <div class="user">
+            <p>User5 - 1100 points</p>
+            <p class="trophy">🏅 5th Place - Participant Ribbon</p>
+        </div>
+    </section>
+
+    <div class="nav-buttons">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/topics">Educational Modules</a>
+        <a href="/quizzes">Quizzes</a>
+        <a href="/challenges">Challenges</a>
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/profile">Profile</a>
+    </div>
+
+  </div>
+
+  <footer>
+      <p>&copy; 2025 Financial Literacy for Women. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

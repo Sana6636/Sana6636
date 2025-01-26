@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* Beige */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #8b4513; /* Brown */
+            margin: 0 0 20px;
+        }
+
+        main {
+            background-color: #d2b48c; /* Tan */
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .question {
+            font-size: 1.2em;
+            color: #4b3832; /* Dark brown */
+            margin-bottom: 15px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            padding: 10px 15px;
+            background-color: #fffaf0; /* Light beige */
+            border: 1px solid #8b4513; /* Brown */
+            border-radius: 6px;
+            color: #4b3832; /* Dark brown */
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #8b4513; /* Brown */
+            color: white;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #8b4513; /* Brown */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a2d0c; /* Darker brown */
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: #8b4513;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .solution {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #8b4513; /* Brown */
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+    <!-- <script>
+        function checkAnswers() {
+            const correctAnswers = ['A', 'C', 'D'];
+            const userAnswers = Array.from(document.querySelectorAll('input[type="radio"]:checked'));
+            const solutionDiv = document.querySelector('.solution');
+
+            if (userAnswers.length < correctAnswers.length) {
+                solutionDiv.textContent = "Please answer all the questions!";
+            } else {
+                let score = 0;
+                userAnswers.forEach((answer, index) => {
+                    if (answer.value === correctAnswers[index]) {
+                        score++;
+                    }
+                });
+                solutionDiv.textContent = You scored ${score} out of ${correctAnswers.length}.;
+            }
+            solutionDiv.style.display = 'block';
+        }
+    </script> -->
+</head>
+<body>
+    <header>
+        <h1>Quiz: Test Your Knowledge</h1>
+    </header>
+    <main>
+        <form>
+            <div class="question">
+                1. What is a budget primarily used for?
+            </div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="A"> A. Tracking income and expenses</label>
+                <label class="option"><input type="radio" name="q1" value="B"> B. Earning more income</label>
+                <label class="option"><input type="radio" name="q1" value="C"> C. Paying off debts</label>
+                <label class="option"><input type="radio" name="q1" value="D"> D. None of the above</label>
+            </div>
+
+            <div class="question">
+                2. Which of the following is an example of a long-term financial goal?
+            </div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="A"> A. Buying groceries</label>
+                <label class="option"><input type="radio" name="q2" value="B"> B. Paying a utility bill</label>
+                <label class="option"><input type="radio" name="q2" value="C"> C. Saving for retirement</label>
+                <label class="option"><input type="radio" name="q2" value="D"> D. Buying clothes</label>
+            </div>
+
+            <div class="question">
+                3. What is the key benefit of diversifying investments?
+            </div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="A"> A. Guaranteed profits</label>
+                <label class="option"><input type="radio" name="q3" value="B"> B. No financial risk</label>
+                <label class="option"><input type="radio" name="q3" value="C"> C. Higher returns</label>
+                <label class="option"><input type="radio" name="q3" value="D"> D. Reducing risk</label>
+            </div>
+        </form>
+        <div class="button-container">
+            <button type="button" onclick="checkAnswers()">Submit</button>
+        </div>
+        <div class="solution"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Financial Literacy for Women. All rights reserved.</p>
+    </footer>
+</body>
+</html>
