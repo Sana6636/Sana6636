@@ -3,31 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* Beige */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #d2b48c; /* Tan */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #8b4513; /* Brown */
+        }
+
+        .header h1 {
+            font-size: 1.5em;
+            color: #8b4513; /* Brown */
+            margin: 0;
+        }
+
+        .profile-details {
+            margin: 20px 0;
+            font-size: 1em;
+        }
+
+        .profile-details span {
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .progress {
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            background-color: #fff;
+            border: 1px solid #8b4513;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+            width: 100%;
+        }
+
+        .progress-bar-inner {
+            background-color: #8b4513; /* Brown */
+            width: 60%; /* Progress percentage */
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .progress-text {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #8b4513;
+        }
+
+        .current-level {
+            text-align: center;
+            font-size: 1.2em;
+            color: #8b4513;
+            background-color: #f5f5dc; /* Beige */
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Your Profile</h1>
-        <nav>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="educational.html">Educational Modules</a>
-            <a href="quiz.html">Quizzes</a>
-            <a href="challenges.html">Challenges</a>
-            <a href="leaderboard.html">Leaderboard</a>
-            <a href="rewards.html">Rewards</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Profile Details</h2>
-            <p>Name: [User]</p>
-            <p>Email: [user@example.com]</p>
-            <button>Edit Profile</button>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Financial Literacy for Women. All rights reserved.</p>
-    </footer>
+    <div class="profile-container">
+        <div class="header">
+            <!-- Icon-based Profile Picture -->
+            <img src="https://img.icons8.com/ios/452/user-male.png" alt="User Profile Icon">
+            <h1>Welcome, [Username]</h1>
+        </div>
+        <div class="profile-details">
+            <p><span>Email:</span> user@example.com</p>
+            <p><span>Joined:</span> January 2025</p>
+            <p><span>Total Points:</span> 1200</p>
+        </div>
+        <div class="progress">
+            <h2>Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-inner"></div>
+            </div>
+            <p class="progress-text">60% Completed</p>
+        </div>
+        <div class="current-level">
+            <p>Current Level: <strong>Intermediate</strong></p>
+        </div>
+    </div>
 </body>
 </html>

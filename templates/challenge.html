@@ -195,8 +195,14 @@
 
     <script>
         function startChallenge(challengeName) {
-            alert("Starting challenge: " + challengeName);
-            // Implement further functionality, e.g., redirect to the challenge page, show instructions, etc.
+            // Check which challenge is selected and redirect accordingly
+            if (challengeName === 'Budgeting Basics') {
+                window.location.href = 'easy.html'; // Redirect to the specific challenge page
+            }
+            else if(challengeName === 'Tax Filing Simulation'){
+                window.location.href = 'tax.html';
+            }
+            // You can add more conditions for other challenges if necessary
         }
     </script>
 </body>

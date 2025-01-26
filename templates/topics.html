@@ -134,6 +134,18 @@
       &copy; 2025 Finance Education App. All rights reserved.
     </footer>
   </div>
+  <script>
+    // You can also use JavaScript to dynamically handle redirects
+    document.querySelectorAll('.start-btn').forEach(button => {
+      button.addEventListener('click', function(event) {
+        // Check which module was clicked and redirect accordingly
+        if (this.textContent === "Start Module" && this.parentNode.querySelector('h2').textContent === "Budgeting Basics") {
+          window.location.href = "module.html"; // Redirect to the Budgeting Basics module
+        }
+        // You can add similar conditions for other modules
+      });
+    });
+  </script>
 </body>
 </html>
 

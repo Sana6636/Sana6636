@@ -53,7 +53,7 @@ def topics():
     return render_template('topics.html')
 
 # challenge page
-@app.route('/challenge')
+@app.route('/challenges')
 def challenge():
     return render_template('challenge.html')
 
@@ -63,14 +63,14 @@ def leaderboard():
     return render_template('leaderboard.html')
 
 # easylevel
-@app.route('/easylevel')
+@app.route('/easy.html')
 def leaderboard1():
     return render_template('easy.html')
 
 # emergencylevel
-@app.route('/emergencylevel')
+@app.route('/tax.html')
 def leaderboard2():
-    return render_template('emergency.html')
+    return render_template('tax.html')
 
 
 # quiz page
@@ -83,6 +83,13 @@ def quiz():
 def rewards():
     return render_template('rewards.html')
 
+@app.route('/module.html')
+def mod():
+    return render_template('module.html')
+
+@app.route('/profile')
+def prof():
+    return render_template('profile.html')
 # Run the app
 if __name__ == "__main__":
     app.run(debug=True)
