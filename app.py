@@ -62,6 +62,17 @@ def challenge():
 def leaderboard():
     return render_template('leaderboard.html')
 
+# easylevel
+@app.route('/easylevel')
+def leaderboard1():
+    return render_template('easy.html')
+
+# emergencylevel
+@app.route('/emergencylevel')
+def leaderboard2():
+    return render_template('emergency.html')
+
+
 # quiz page
 @app.route('/quizzes')
 def quiz():

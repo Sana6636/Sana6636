@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting Basics - Financial Literacy Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f2eb; /* Beige background */
+            color: #4e3629; /* Dark brown text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6a4e3f; /* Tan header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .main-content {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #6a4e3f; /* Tan color */
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #6a4e3f;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #8e6a4b; /* Brown button */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+
+        .result {
+            background-color: #d8c6b7; /* Light tan result box */
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .result p {
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #6a4e3f; /* Tan footer */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer button {
+            background-color: #8e6a4b; /* Brown button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Budgeting Basics Challenge</h1>
+    <p>Challenge: Categorize your monthly expenses and ensure they don't exceed your income.</p>
+</header>
+
+<div class="main-content">
+    <h2>Enter Your Monthly Budget</h2>
+    <form id="budgetForm">
+        <label for="income">Your Monthly Income ($):</label>
+        <input type="number" id="income" required>
+
+        <label for="rent">Rent ($):</label>
+        <input type="number" id="rent" required>
+
+        <label for="groceries">Groceries ($):</label>
+        <input type="number" id="groceries" required>
+
+        <label for="entertainment">Entertainment ($):</label>
+        <input type="number" id="entertainment" required>
+
+        <label for="other">Other Expenses ($):</label>
+        <input type="number" id="other" required>
+
+        <button type="button" onclick="calculateBudget()">Submit Budget</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+        <p id="resultText"></p>
+    </div>
+</div>
+
+<footer>
+    <button onclick="window.location.href='/';">Back to Challenges</button>
+</footer>
+
+<script>
+    function calculateBudget() {
+        var income = parseFloat(document.getElementById("income").value);
+        var rent = parseFloat(document.getElementById("rent").value);
+        var groceries = parseFloat(document.getElementById("groceries").value);
+        var entertainment = parseFloat(document.getElementById("entertainment").value);
+        var other = parseFloat(document.getElementById("other").value);
+
+        var totalExpenses = rent + groceries + entertainment + other;
+        var resultText = "";
+
+        if (totalExpenses > income) {
+            resultText = "Your total expenses exceed your income by $" + (totalExpenses - income).toFixed(2) + ". Try to cut back on some expenses!";
+        } else {
+            resultText = "Your expenses are within your budget! Total expenses: $" + totalExpenses.toFixed(2) + ". You are on track!";
+        }
+
+        // Display result
+        document.getElementById("resultText").innerText = resultText;
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

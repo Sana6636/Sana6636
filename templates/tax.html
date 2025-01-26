@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Filing Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f2eb; /* Beige background */
+            color: #4e3629; /* Dark brown text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6a4e3f; /* Tan header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .main-content {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .challenge-card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #6a4e3f; /* Tan border */
+        }
+
+        .challenge-card h2 {
+            font-size: 2em;
+            color: #6a4e3f; /* Tan color */
+            margin-bottom: 15px;
+        }
+
+        .challenge-card p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .challenge-card form label {
+            font-size: 1.1em;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .challenge-card form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .challenge-card form button {
+            background-color: #8e6a4b; /* Brown button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .challenge-card form button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f8f6;
+            border-left: 5px solid #8e6a4b; /* Brown border */
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #6a4e3f; /* Tan footer */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer button {
+            background-color: #8e6a4b; /* Brown button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tax Filing Simulation</h1>
+    <p>Learn how to optimize your tax return with deductions and credits.</p>
+</header>
+
+<div class="main-content">
+    <div class="challenge-card">
+        <h2>Challenge: Complete a Mock Tax Form</h2>
+        <p><strong>Description:</strong> Enter your income, deductions, and credits to calculate your optimized tax return.</p>
+        
+        <form id="taxForm">
+            <label for="income">Total Annual Income (₹):</label>
+            <input type="number" id="income" placeholder="Enter your total income" required>
+
+            <label for="deductions">Deductions (₹):</label>
+            <input type="number" id="deductions" placeholder="Enter your eligible deductions" required>
+
+            <label for="credits">Tax Credits (₹):</label>
+            <input type="number" id="credits" placeholder="Enter your tax credits" required>
+
+            <label for="taxRate">Tax Rate (%):</label>
+            <input type="number" id="taxRate" placeholder="Enter the applicable tax rate" required>
+
+            <button type="button" onclick="calculateTax()">Calculate Tax Return</button>
+        </form>
+
+        <div class="results" id="results" style="display: none;">
+            <p><strong>Results:</strong></p>
+            <p id="taxableIncome"></p>
+            <p id="taxOwed"></p>
+            <p id="taxRefund"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <button onclick="window.location.href='/leaderboard';">View Leaderboard</button>
+    <button onclick="window.location.href='/rewards';">Claim Rewards</button>
+</footer>
+
+<script>
+    function calculateTax() {
+        // Get values from the form
+        const income = parseFloat(document.getElementById('income').value);
+        const deductions = parseFloat(document.getElementById('deductions').value);
+        const credits = parseFloat(document.getElementById('credits').value);
+        const taxRate = parseFloat(document.getElementById('taxRate').value) / 100;
+
+        // Validate input values
+        if (isNaN(income) || isNaN(deductions) || isNaN(credits) || isNaN(taxRate) || income < 0 || deductions < 0 || credits < 0 || taxRate < 0) {
+            alert('Please enter valid positive numbers for all fields.');
+            return;
+        }
+
+        // Calculate results
+        const taxableIncome = Math.max(0, income - deductions);
+        const taxOwed = taxableIncome * taxRate;
+        const taxRefund = credits - taxOwed;
+
+        // Display results
+        document.getElementById('taxableIncome').textContent = `Taxable Income: ₹${taxableIncome.toFixed(2)}`;
+        document.getElementById('taxOwed').textContent = `Tax Owed: ₹${taxOwed.toFixed(2)}`;
+        document.getElementById('taxRefund').textContent = taxRefund >= 0
+            ? `Tax Refund: ₹${taxRefund.toFixed(2)}`
+            : `Additional Tax Due: ₹${Math.abs(taxRefund).toFixed(2)}`;
+
+        // Show the results section
+        document.getElementById('results').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

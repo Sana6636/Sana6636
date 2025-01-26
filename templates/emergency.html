@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Fund Planning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f2eb; /* Beige background */
+            color: #4e3629; /* Dark brown text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6a4e3f; /* Tan header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .main-content {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .challenge-card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #6a4e3f; /* Tan border */
+        }
+
+        .challenge-card h2 {
+            font-size: 2em;
+            color: #6a4e3f; /* Tan color */
+            margin-bottom: 15px;
+        }
+
+        .challenge-card p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .challenge-card form label {
+            font-size: 1.1em;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .challenge-card form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .challenge-card form button {
+            background-color: #8e6a4b; /* Brown button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .challenge-card form button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f8f6;
+            border-left: 5px solid #8e6a4b; /* Brown border */
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #6a4e3f; /* Tan footer */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer button {
+            background-color: #8e6a4b; /* Brown button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Emergency Fund Planning</h1>
+    <p>Learn how to plan for emergencies by saving wisely.</p>
+</header>
+
+<div class="main-content">
+    <div class="challenge-card">
+        <h2>Challenge: Build Your Emergency Fund</h2>
+        <p><strong>Description:</strong> Calculate how much you need to save for emergencies based on your income and expenses. Create a detailed plan to achieve your savings goal.</p>
+        
+        <form id="emergencyFundForm">
+            <label for="monthlyIncome">Your Monthly Income (₹):</label>
+            <input type="number" id="monthlyIncome" placeholder="Enter your income" required>
+
+            <label for="monthlyExpenses">Your Monthly Expenses (₹):</label>
+            <input type="number" id="monthlyExpenses" placeholder="Enter your expenses" required>
+
+            <label for="fundGoal">Emergency Fund Goal (₹):</label>
+            <input type="number" id="fundGoal" placeholder="Enter your fund goal (e.g., 3-6 months of expenses)" required>
+
+            <button type="button" onclick="calculatePlan()">Calculate Plan</button>
+        </form>
+
+        <div class="results" id="results" style="display: none;">
+            <p><strong>Results:</strong></p>
+            <p id="savingsPerMonth"></p>
+            <p id="timeToReachGoal"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <button onclick="window.location.href='/leaderboard';">View Leaderboard</button>
+    <button onclick="window.location.href='/rewards';">Claim Rewards</button>
+</footer>
+
+<script>
+    function calculatePlan() {
+        const income = parseFloat(document.getElementById('monthlyIncome').value);
+        const expenses = parseFloat(document.getElementById('monthlyExpenses').value);
+        const fundGoal = parseFloat(document.getElementById('fundGoal').value);
+
+        if (income && expenses && fundGoal && income > expenses) {
+            const savingsPerMonth = income - expenses;
+            const monthsToGoal = Math.ceil(fundGoal / savingsPerMonth);
+
+            document.getElementById('savingsPerMonth').textContent = `You can save ₹${savingsPerMonth.toFixed(2)} per month.`;
+            document.getElementById('timeToReachGoal').textContent = `It will take you approximately ${monthsToGoal} month(s) to reach your goal.`;
+
+            document.getElementById('results').style.display = 'block';
+        } else {
+            alert('Please enter valid values where your income exceeds expenses.');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -3,123 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
+    <title>Financial Literacy Challenge</title>
     <style>
         body {
-            background-color: #f5f5dc; /* Beige */
-            color: #4b3832; /* Dark brown */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f2ebe3; /* Light beige */
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 0;
+            color: #5a3e36; /* Dark brown */
         }
-
-        .container {
-            text-align: center;
-            width: 90%;
-            max-width: 600px;
-            background-color: #fffaf0; /* Light beige */
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        header {
+            background-color: #6a4e3f; /* Tan */
+            color: white;
             padding: 20px;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        .user {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        .trophy {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .nav-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .nav-buttons a {
-            display: block;
-            padding: 15px;
-            background-color: #d2b48c; /* Tan */
-            color: #4b3832; /* Dark brown */
-            font-size: 18px;
-            font-weight: bold;
             text-align: center;
-            text-decoration: none;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.1em;
+        }
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #6a4e3f; /* Tan */
+            margin-bottom: 20px;
+        }
+        .challenge {
+            background-color: #fff;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-left: 5px solid #6a4e3f; /* Tan border */
         }
-
-        .nav-buttons a:hover {
-            background-color: #b8860b; /* Darker tan */
+        .challenge h3 {
+            font-size: 1.5em;
+            color: #6a4e3f; /* Tan */
+            margin-bottom: 10px;
         }
-
-        footer {
-            margin-top: 40px;
+        .challenge p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #8e6a4b; /* Brown */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
+        #rewards {
+            background-color: #d8c6b7; /* Light tan */
+            padding: 20px;
             text-align: center;
-            font-size: 14px;
-            color: #777;
+            border-radius: 8px;
         }
-
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6a4e3f; /* Tan */
+        }
+        footer button {
+            background-color: #8e6a4b; /* Brown */
+            margin: 10px;
+        }
+        footer button:hover {
+            background-color: #a77460; /* Lighter brown on hover */
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Welcome to the Financial Literacy Challenge!</h1>
+        <p>Test your knowledge and skills at different levels of financial management. Complete challenges, earn points, and unlock badges to enhance your financial literacy.</p>
+    </header>
 
-  <div class="container">
-    <h1 class="title">Leaderboard</h1>
+    <main>
+        <section id="easy-level">
+            <h2>Easy Level: Financial Foundations</h2>
+            <div class="challenge">
+                <h3>1. Budgeting Basics</h3>
+                <p><strong>Challenge:</strong> Categorize your monthly expenses (e.g., rent, groceries, entertainment) and ensure they don't exceed your income.</p>
+                <p><strong>Points:</strong> 50 Points</p>
+                <button onclick="startChallenge('Budgeting Basics')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>2. Simple Savings Quiz</h3>
+                <p><strong>Challenge:</strong> Answer multiple-choice questions on basic savings strategies.</p>
+                <p><strong>Points:</strong> 50 Points</p>
+                <button onclick="startChallenge('Simple Savings Quiz')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>3. Needs vs. Wants</h3>
+                <p><strong>Challenge:</strong> Identify which of the following are needs and which are wants.</p>
+                <p><strong>Points:</strong> 50 Points</p>
+                <button onclick="startChallenge('Needs vs. Wants')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>4. Financial Terms Quiz</h3>
+                <p><strong>Challenge:</strong> Test your understanding of basic financial terms like "interest rates," "savings accounts," and "credit scores."</p>
+                <p><strong>Points:</strong> 50 Points</p>
+                <button onclick="startChallenge('Financial Terms Quiz')">Start Challenge</button>
+            </div>
+        </section>
 
-    <section>
-        <h2>Top Performers</h2>
-        <div class="user">
-            <p>User1 - 1500 points</p>
-            <p class="trophy">🏆 1st Place - Gold Trophy</p>
-        </div>
-        <div class="user">
-            <p>User2 - 1400 points</p>
-            <p class="trophy">🥈 2nd Place - Silver Trophy</p>
-        </div>
-        <div class="user">
-            <p>User3 - 1300 points</p>
-            <p class="trophy">🥉 3rd Place - Bronze Trophy</p>
-        </div>
-        <div class="user">
-            <p>User4 - 1200 points</p>
-            <p class="trophy">🏅 4th Place - Participant Ribbon</p>
-        </div>
-        <div class="user">
-            <p>User5 - 1100 points</p>
-            <p class="trophy">🏅 5th Place - Participant Ribbon</p>
-        </div>
-    </section>
+        <section id="intermediate-level">
+            <h2>Intermediate Level: Smart Financial Management</h2>
+            <div class="challenge">
+                <h3>1. Create a Budget Plan</h3>
+                <p><strong>Challenge:</strong> You have a monthly income of $3,000. Can you balance your budget with the following expenses (rent, utilities, groceries, savings, etc.)?</p>
+                <p><strong>Points:</strong> 100 Points</p>
+                <button onclick="startChallenge('Create a Budget Plan')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>2. Credit Score Simulation</h3>
+                <p><strong>Challenge:</strong> Manage a credit card and loan payments to improve your credit score.</p>
+                <p><strong>Points:</strong> 100 Points</p>
+                <button onclick="startChallenge('Credit Score Simulation')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>3. Debt Management Quiz</h3>
+                <p><strong>Challenge:</strong> Answer questions related to managing different types of debt (credit card debt, student loans, etc.).</p>
+                <p><strong>Points:</strong> 100 Points</p>
+                <button onclick="startChallenge('Debt Management Quiz')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>4. Investment Basics</h3>
+                <p><strong>Challenge:</strong> Learn about stocks, bonds, and mutual funds and create a portfolio with a balanced mix.</p>
+                <p><strong>Points:</strong> 100 Points</p>
+                <button onclick="startChallenge('Investment Basics')">Start Challenge</button>
+            </div>
+        </section>
 
-    <div class="nav-buttons">
-        <a href="/dashboard">Dashboard</a>
-        <a href="/topics">Educational Modules</a>
-        <a href="/quizzes">Quizzes</a>
-        <a href="/challenges">Challenges</a>
-        <a href="/leaderboard">Leaderboard</a>
-        <a href="/profile">Profile</a>
-    </div>
+        <section id="pro-level">
+            <h2>Pro Level: Mastering Complex Financial Strategies</h2>
+            <div class="challenge">
+                <h3>1. Advanced Budgeting Challenge</h3>
+                <p><strong>Challenge:</strong> Your income has decreased due to unforeseen circumstances. You need to adjust your budget to stay within your new income while accounting for inflation and unexpected expenses.</p>
+                <p><strong>Points:</strong> 200 Points</p>
+                <button onclick="startChallenge('Advanced Budgeting Challenge')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>2. Investment Risk Assessment</h3>
+                <p><strong>Challenge:</strong> Assess various investment opportunities with high, medium, and low-risk profiles and create a balanced portfolio.</p>
+                <p><strong>Points:</strong> 200 Points</p>
+                <button onclick="startChallenge('Investment Risk Assessment')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>3. Retirement Planning</h3>
+                <p><strong>Challenge:</strong> Plan your retirement to reach a goal of $1 million by the time you're 60, considering inflation and future expenses.</p>
+                <p><strong>Points:</strong> 200 Points</p>
+                <button onclick="startChallenge('Retirement Planning')">Start Challenge</button>
+            </div>
+            <div class="challenge">
+                <h3>4. Tax Filing Simulation</h3>
+                <p><strong>Challenge:</strong> Complete a mock tax form based on deductions and credits to optimize your tax return.</p>
+                <p><strong>Points:</strong> 200 Points</p>
+                <button onclick="startChallenge('Tax Filing Simulation')">Start Challenge</button>
+            </div>
+        </section>
 
-  </div>
+        <section id="rewards">
+            <h2>Challenge Rewards and Achievements</h2>
+            <p>Earn badges as you complete challenges (e.g., Budgeting Master, Savings Pro, Investment Genius).</p>
+            <p>Check your <a href="/leaderboard">Leaderboard</a> to see who’s topping the charts!</p>
+            <p>Points System: Collect points and redeem them for exclusive rewards!</p>
+        </section>
+    </main>
 
-  <footer>
-      <p>&copy; 2025 Financial Literacy for Women. All rights reserved.</p>
-  </footer>
+    <footer>
+        <button onclick="window.location.href='/leaderboard';">View Leaderboard</button>
+        <button onclick="window.location.href='/rewards';">Claim Rewards</button>
+    </footer>
 
+    <script>
+        function startChallenge(challengeName) {
+            alert("Starting challenge: " + challengeName);
+            // Implement further functionality, e.g., redirect to the challenge page, show instructions, etc.
+        }
+    </script>
 </body>
 </html>
