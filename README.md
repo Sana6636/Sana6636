@@ -71,3 +71,7 @@ Explains the overall flow of the project.
 Demonstrates the core features of the project
 https://github.com/user-attachments/assets/5b62db49-9e95-4f86-ac0c-c6eac244b9bc
 
+## Team Contribution
+* Fathimma Sana: [Backend development, API integration, database design]
+* Ladeeda Nasar: [Frontend development, UI design, gamification modules]
+*  Fathima Nabha: [Quiz content creation, user testing, documentation]
