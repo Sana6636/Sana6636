@@ -8,6 +8,8 @@
 
 ### Hosted Project Link:
 https://sana6636.onrender.com
+username:user1
+password:password123
 
 ## Project Description:
 SheGetsIt is an engaging web app designed to educate women about personal finance, investments, and credit management through interactive quizzes, challenges, and gamified modules. It simplifies financial literacy for women in an accessible and fun way
